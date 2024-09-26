@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 //here I have used Context API to pass the data to another components.
-const PostContext = createContext();
-export const ConText_Api = () => useContext(PostContext);
+const Context = createContext();
+export const ConText_Api = () => useContext(Context);
 
 const App = ({ children }) => {
   const IMAGE_API = "https://66f450c677b5e889709923f5.mockapi.io/Images/Images";
@@ -24,6 +24,7 @@ const App = ({ children }) => {
   const PageNumbers = [...Array(CountPages + 1).keys()].slice(1);
 
   const DataFeching = () => {
+    //for data fetching i have used fetch API
     fetch(IMAGE_API)
       .then((res) => res.json())
       .then((data) => {
@@ -39,6 +40,7 @@ const App = ({ children }) => {
       });
   };
 
+  //for manage the side effect i have used useEffect hook
   useEffect(() => {
     DataFeching();
   }, []);
@@ -54,7 +56,7 @@ const App = ({ children }) => {
 
   return (
     <>
-      <PostContext.Provider
+      <Context.Provider
         value={{
           Allimages: SearchValue.length > 0 ? SearchValue : Allimages,
           setAllimages,
@@ -74,7 +76,7 @@ const App = ({ children }) => {
         }}
       >
         {children}
-      </PostContext.Provider>
+      </Context.Provider>
     </>
   );
 };

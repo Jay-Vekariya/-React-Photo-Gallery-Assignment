@@ -66,8 +66,9 @@ const Home_Page = () => {
 
   if (loading) {
     return (
-      <div className="text-center mt-[300px] font-semibold 2xl:text-[50px] xl:text-[50px]">
-        Loding...
+      <div className="text-center mt-[300px] font-semibold 2xl:text-[50px] xl:text-[50px] lg:text-[50px] md:text-[50px] sm:text-[40px] text-[40px]">
+        <p>Loding...</p>
+        {/* here i have use the loading indicator*/}
         <PropagateLoader />
       </div>
     );
@@ -83,7 +84,7 @@ const Home_Page = () => {
           type="text"
           onChange={(e) => SearchFunction(e.target.value)}
           placeholder="Browse and search for images..."
-          className="placeholder:text-[#4847C1] border-[#4847C1] text-center border-[2px] rounded-md hove:border-white hover:border-[#4847C1] 2xl:h-[35px] 2xl:w-[250px] xl:w-[250px] xl:h-[35px] lg:w-[250px] lg:h-[35px] md:w-[250px] md:h-[35px] sm:w-[250px] sm:h-[35px] w-[250px] h-[35px] shadow-xl hover:border-none backdrop-blur-lg hover:shadow-[1px_4px_10px_1.5px_rgb(93,93,93)] transition-all duration-300"
+          className="p-3 placeholder:text-[#4847C1] border-[#4847C1] text-center border-[2px] rounded-md hove:border-white hover:border-[#4847C1] 2xl:h-[35px] 2xl:w-[250px] xl:w-[250px] xl:h-[35px] lg:w-[250px] lg:h-[35px] md:w-[250px] md:h-[35px] sm:w-[250px] sm:h-[35px] w-[250px] h-[35px] shadow-xl hover:border-none backdrop-blur-lg hover:shadow-[1px_4px_10px_1.5px_rgb(93,93,93)] transition-all duration-300"
         />
       </nav>
 

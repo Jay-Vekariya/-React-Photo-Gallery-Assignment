@@ -8,6 +8,7 @@ import Image_Model from "./Components/Image_Model.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    {/* Here i have used the React Router for navigate between different pages */}
     <BrowserRouter>
       <App>
         <Routes>
